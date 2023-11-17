@@ -18,7 +18,7 @@
 		<header>
 			<div class="title">
 				<h2>
-					<a href="single.html">Magna sed adipiscing</a>
+					원하는 장르를 골라주세요!
 				</h2>
 				<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
 			</div>
@@ -29,7 +29,7 @@
 					src="images/avatar.jpg" alt="" /></a>
 			</div>
 		</header>
-		<a href="single.html" class="image featured"><img
+		<a href="single.jsp" class="image featured"><img
 			src="images/pic01.jpg" alt="" /></a>
 		<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus
 			nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor
@@ -49,90 +49,6 @@
 			</ul>
 		</footer>
 	</article>
-
-	<!-- Post -->
-	<article class="post">
-		<header>
-			<div class="title">
-				<h2>
-					<a href="single.html">Ultricies sed magna euismod enim vitae
-						gravida</a>
-				</h2>
-				<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-			</div>
-			<div class="meta">
-				<time class="published" datetime="2015-10-25">October 25,
-					2015</time>
-				<a href="#" class="author"><span class="name">Jane Doe</span><img
-					src="images/avatar.jpg" alt="" /></a>
-			</div>
-		</header>
-		<a href="single.html" class="image featured"><img
-			src="images/pic02.jpg" alt="" /></a>
-		<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus
-			nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor
-			magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi
-			non congue ullam corper.</p>
-		<footer>
-			<ul class="actions">
-				<li><a href="single.html" class="button large">Continue
-						Reading</a></li>
-			</ul>
-			<ul class="stats">
-				<li><a href="#">General</a></li>
-				<li><a href="#" class="icon solid fa-heart">28</a></li>
-				<li><a href="#" class="icon solid fa-comment">128</a></li>
-			</ul>
-		</footer>
-	</article>
-
-	<!-- Post -->
-	<article class="post">
-		<header>
-			<div class="title">
-				<h2>
-					<a href="single.html">Euismod et accumsan</a>
-				</h2>
-				<p>Lorem ipsum dolor amet nullam consequat etiam feugiat</p>
-			</div>
-			<div class="meta">
-				<time class="published" datetime="2015-10-22">October 22,
-					2015</time>
-				<a href="#" class="author"><span class="name">Jane Doe</span><img
-					src="images/avatar.jpg" alt="" /></a>
-			</div>
-		</header>
-		<a href="single.html" class="image featured"><img
-			src="images/pic03.jpg" alt="" /></a>
-		<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus
-			nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor
-			magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi
-			non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed
-			vitae justo condimentum, porta lectus vitae, ultricies congue gravida
-			diam non fringilla. Cras vehicula tellus eu ligula viverra, ac
-			fringilla turpis suscipit. Quisque vestibulum rhoncus ligula.</p>
-		<footer>
-			<ul class="actions">
-				<li><a href="single.html" class="button large">Continue
-						Reading</a></li>
-			</ul>
-			<ul class="stats">
-				<li><a href="#">General</a></li>
-				<li><a href="#" class="icon solid fa-heart">28</a></li>
-				<li><a href="#" class="icon solid fa-comment">128</a></li>
-			</ul>
-		</footer>
-	</article>
-
-
-
-	<!-- Pagination -->
-	<ul class="actions pagination">
-		<li><a href="" class="disabled button large previous">Previous
-				Page</a></li>
-		<li><a href="#" class="button large next">Next Page</a></li>
-	</ul>
-
 </div>
 
 <!-- Sidebar -->
@@ -153,49 +69,7 @@
 	<!-- Mini Posts -->
 	<section>
 		<div class="mini-posts">
-
-			<!-- Mini Post -->
-			<article class="mini-post">
-				<header>
-					<h3>
-						<a href="single.html">Vitae sed condimentum</a>
-					</h3>
-					<time class="published" datetime="2015-10-20">October 20,
-						2015</time>
-					<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-				</header>
-				<a href="single.html" class="image"><img src="images/pic04.jpg"
-					alt="" /></a>
-			</article>
-
-			<!-- Mini Post -->
-			<article class="mini-post">
-				<header>
-					<h3>
-						<a href="single.html">Rutrum neque accumsan</a>
-					</h3>
-					<time class="published" datetime="2015-10-19">October 19,
-						2015</time>
-					<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-				</header>
-				<a href="single.html" class="image"><img src="images/pic05.jpg"
-					alt="" /></a>
-			</article>
-
-			<!-- Mini Post -->
-			<article class="mini-post">
-				<header>
-					<h3>
-						<a href="single.html">Odio congue mattis</a>
-					</h3>
-					<time class="published" datetime="2015-10-18">October 18,
-						2015</time>
-					<a href="#" class="author"><img src="images/avatar.jpg" alt="" /></a>
-				</header>
-				<a href="single.html" class="image"><img src="images/pic06.jpg"
-					alt="" /></a>
-			</article>
-
+		
 			<!-- Mini Post -->
 			<article class="mini-post">
 				<header>
@@ -216,60 +90,6 @@
 	<!-- Posts List -->
 	<section>
 		<ul class="posts">
-			<li>
-				<article>
-					<header>
-						<h3>
-							<a href="single.html">Lorem ipsum fermentum ut nisl vitae</a>
-						</h3>
-						<time class="published" datetime="2015-10-20">October 20,
-							2015</time>
-					</header>
-					<a href="single.html" class="image"><img src="images/pic08.jpg"
-						alt="" /></a>
-				</article>
-			</li>
-			<li>
-				<article>
-					<header>
-						<h3>
-							<a href="single.html">Convallis maximus nisl mattis nunc id
-								lorem</a>
-						</h3>
-						<time class="published" datetime="2015-10-15">October 15,
-							2015</time>
-					</header>
-					<a href="single.html" class="image"><img src="images/pic09.jpg"
-						alt="" /></a>
-				</article>
-			</li>
-			<li>
-				<article>
-					<header>
-						<h3>
-							<a href="single.html">Euismod amet placerat vivamus porttitor</a>
-						</h3>
-						<time class="published" datetime="2015-10-10">October 10,
-							2015</time>
-					</header>
-					<a href="single.html" class="image"><img src="images/pic10.jpg"
-						alt="" /></a>
-				</article>
-			</li>
-			<li>
-				<article>
-					<header>
-						<h3>
-							<a href="single.html">Magna enim accumsan tortor cursus
-								ultricies</a>
-						</h3>
-						<time class="published" datetime="2015-10-08">October 8,
-							2015</time>
-					</header>
-					<a href="single.html" class="image"><img src="images/pic11.jpg"
-						alt="" /></a>
-				</article>
-			</li>
 			<li>
 				<article>
 					<header>
@@ -313,8 +133,8 @@
 					class="label">Email</span></a></li>
 		</ul>
 		<p class="copyright">
-			&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.
-			Images: <a href="http://unsplash.com">Unsplash</a>.
+			&copy; 202244005 김서영<br>
+			Design : <a href="http://html5up.net">HTML5 UP</a>
 		</p>
 	</section>
 

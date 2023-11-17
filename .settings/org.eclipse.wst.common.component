@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="selecToon">
+        
+    <wb-module deploy-name="nextoon">
+                
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <property name="context-root" value="selecToon"/>
-        <property name="java-output-path" value="/selecToon/build/classes"/>
+                
+        <property name="java-output-path" value="/nextoon/build/classes"/>
+        <property name="context-root" value="nextoon"/>
+            
     </wb-module>
+    
 </project-modules>

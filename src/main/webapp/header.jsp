@@ -34,7 +34,7 @@
 					}
 					%>
 					<li><a href="#">자유게시판</a></li>
-					<li><a href="#">추천게시판</a></li>
+					<li><a href="recommendBbs.jsp">추천게시판</a></li>
 					<li><a href="#">덕질게시판</a></li>
 				</ul>
 			</nav>
@@ -66,7 +66,7 @@
 							<h3>자유게시판</h3>
 							<p>웹툰에 대한 모든 하고싶은말을 적어주세요!</p>
 					</a></li>
-					<li><a href="#">
+					<li><a href="recommendBbs.jsp">
 							<h3>추천게시판</h3>
 							<p>이 웹툰 괜찮은데? 추천해주세요!</p>
 					</a></li>
