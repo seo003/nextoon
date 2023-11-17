@@ -25,60 +25,60 @@
 			</div>
 		</header>
 		<div class="table-wrapper">
-				<table>
-					<thead>
-						<tr>
+			<table>
+				<thead>
+					<tr>
 						<th>번호</th>
-							<th>제목</th>
-							<th>작성자</th>
-							<th>날짜</th>
-							<th>좋아요</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
+						<th>제목</th>
+						<th>작성자</th>
+						<th>날짜</th>
+						<th>좋아요</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
 						<td>1</td>
-							<td>게시물제목제목제목제목제목게시물제목제목제목제목제목</td>
-							<td>작성자</td>
-							<td>2023/11/18 00:23</td>
-							<td>1</td>
-						</tr>
-						<tr>
+						<td>게시물제목제목제목제목제목게시물제목제목제목제목제목</td>
+						<td>작성자</td>
+						<td>2023/11/18 00:23</td>
 						<td>1</td>
-							<td>게시물제목제목제목제목제목</td>
-							<td>작성자</td>
-							<td>2023/11/18 00:23</td>
-							<td>1</td>
-						</tr>
-						<tr>
+					</tr>
+					<tr>
 						<td>1</td>
-							<td>게시물제목제목제목제목제목게시물제목제목제목제목제목</td>
-							<td>작성자</td>
-							<td>2023/11/18 00:23</td>
-							<td>1</td>
-						</tr>
-						<tr>
+						<td>게시물제목제목제목제목제목</td>
+						<td>작성자</td>
+						<td>2023/11/18 00:23</td>
 						<td>1</td>
-							<td>게시물제목제목제목제목제목게시물제목</td>
-							<td>작성자</td>
-							<td>2023/11/18 00:23</td>
-							<td>1</td>
-						</tr>
-						<tr>
+					</tr>
+					<tr>
 						<td>1</td>
-							<td>게시물제목제목제목제목제목제목</td>
-							<td>작성자</td>
-							<td>2023/11/18 00:23</td>
-							<td>18</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<ul class="actions pagination">
-				<li><a href="" class="disabled button large previous">Previous
-						Page</a></li>
-				<li><a href="#" class="button large next">Next Page</a></li>
-			</ul>
+						<td>게시물제목제목제목제목제목게시물제목제목제목제목제목</td>
+						<td>작성자</td>
+						<td>2023/11/18 00:23</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>게시물제목제목제목제목제목게시물제목</td>
+						<td>작성자</td>
+						<td>2023/11/18 00:23</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>게시물제목제목제목제목제목제목</td>
+						<td>작성자</td>
+						<td>2023/11/18 00:23</td>
+						<td>18</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<ul class="actions pagination">
+			<li><a href="" class="disabled button large previous">Previous
+					Page</a></li>
+			<li><a href="#" class="button large next">Next Page</a></li>
+		</ul>
 	</article>
 
 </div>
