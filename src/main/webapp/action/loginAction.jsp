@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="users.UserDAO"%>
+<%@ page import="DAO.UserDAO"%>
 <%@page import="java.io.PrintWriter" %>
-<%@page import="users.UserDTO" %>
+<%@page import="DTO.UserDTO" %>
 <%
 String userId = (String) request.getParameter("id"); //input을 parameter로 가져와서 UserID에 넣기
 String userPw = (String) request.getParameter("password");

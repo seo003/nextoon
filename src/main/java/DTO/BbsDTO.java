@@ -1,4 +1,4 @@
-package bbs;
+package DTO;
 
 public class BbsDTO {
 	private int bbsId;
