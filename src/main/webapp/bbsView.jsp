@@ -21,9 +21,12 @@
 				<h2>
 					<a href="#">제목</a>
 				</h2>
+					<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="#"><input type="button" class="button large next delete" value="삭제" ></a>
+					<a href="#"><input type="button" class="button large next edit" value="수정" ></a>
 			</div>
 			<div class="meta">
-				<time class="published" datetime="2015-11-01">November 1, 2015</time>
+				<time class="published" datetime="2015-11-01">November 1,
+					2015</time>
 				<a href="#" class="author"><span class="name">작성자</span></a>
 			</div>
 		</header>
@@ -31,7 +34,6 @@
 
 		<footer>
 			<ul class="stats">
-				<li><a href="#">General</a></li>
 				<li><a href="#" class="icon solid fa-heart">28</a></li>
 				<li><a href="#" class="icon solid fa-comment">128</a></li>
 			</ul>

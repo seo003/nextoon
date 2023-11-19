@@ -6,7 +6,8 @@
 request.setCharacterEncoding("UTF-8");
 String bbsTitle=null;
 String bbsContent=null;
-String UserID=null;
+String userId=null;
+
 
 if(request.getParameter("bbsTitle")!=null) {
 	bbsTitle=(String)request.getParameter("bbsTitle");
@@ -17,18 +18,18 @@ if(request.getParameter("bbsContent")!=null) {
 }
 
 if(session.getAttribute("loginId")!=null) {
-	UserID=(String)session.getAttribute("loginId");
+	userId=(String)session.getAttribute("loginId");
 }
 
-if (UserID==null) {
+if (userId==null) {
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
 	script.println("alert('로그인이 되어있지 않습니다.')");
-	script.println("location.href='../login.jsp'");
+	script.println("location.href='../sign.jsp'");
 	script.println("</script>");
 	script.close();
 }else {
-	if (bbsTitle==null || bbsContent == null) { //얘 안됨
+	if (bbsTitle==null || bbsContent == null) { 
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('입력이 안 된 사항이 있습니다.')");
@@ -37,8 +38,9 @@ if (UserID==null) {
 		script.close();
 	}else{
 		BbsDAO bbsDAO = new BbsDAO();
-		int result = bbsDAO.write(bbsTitle, UserID, bbsContent);
-		if(result == -1) { //데이터베이스 오류
+		int result = bbsDAO.write(userId, bbsTitle, bbsContent);
+		
+		if(result == -1) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('글쓰기에 실패했습니다.')");

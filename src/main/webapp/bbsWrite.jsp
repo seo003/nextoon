@@ -16,20 +16,20 @@
 
 	<!-- Post -->
 	<article class="post">
-		<header>
-			<form method="post" action="action/writeAction.jsp">
+		<form method="post" action="action/writeAction.jsp">
+			<header>
 				<div class="title">
 					<h2>
-						제목<input id="bbsTitle" type="text" name="bbsTitle">
+						제목<input id="bbsTitle" type="text" name="bbsTitle"
+							style="width: 100%;">
 					</h2>
 				</div>
-
-			</form>
-		</header>
-		내용
-		<textarea id="bbsContent" name="bbsContent" maxlength="2048"></textarea>
-		<br>
-		<input type="submit" class="button large next" value="글쓰기" style="margin-left:90%;">
+			</header>
+			내용
+			<textarea id="bbsContent" name="bbsContent" maxlength="2048"></textarea>
+			<br> <input type="submit" class="button large next" value="글쓰기"
+				style="margin-left: 90%;">
+		</form>
 	</article>
 
 </div>

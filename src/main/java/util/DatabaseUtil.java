@@ -10,7 +10,6 @@ public class DatabaseUtil {
 			String dbID = "root";
 			String dbPW = "rlatjdud";
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			System.out.println("DB 연결 완료");
 			return DriverManager.getConnection(dbURL, dbID, dbPW);
 		} catch (Exception e) {
 			e.printStackTrace();
