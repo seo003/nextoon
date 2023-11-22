@@ -1,64 +1,64 @@
 package DTO;
 
 public class CrawDTO {
-	private String title;
-	private String author;
-	private String week;
-	private String genre;
-	private String summary;
-	private String url;
+	private String crawTitle;
+	private String crawAuthor;
+	private String crawWeek;
+	private String crawGenre;
+	private String crawSummary;
+	private String crawUrl;
 
-	public String getTitle() {
-		return title;
+	public String getCrawTitle() {
+		return crawTitle;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setCrawTitle(String crawTitle) {
+		this.crawTitle = crawTitle;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getCrawAuthor() {
+		return crawAuthor;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setCrawAuthor(String crawAuthor) {
+		this.crawAuthor = crawAuthor;
 	}
 
-	public String getWeek() {
-		return week;
+	public String getCrawWeek() {
+		return crawWeek;
 	}
 
-	public void setWeek(String week) {
-		this.week = week;
+	public void setCrawWeek(String crawWeek) {
+		this.crawWeek = crawWeek;
 	}
 
-	public String getGenre() {
-		return genre;
+	public String getCrawGenre() {
+		return crawGenre;
 	}
 
-	public void setGenre(String genre) {
-		this.genre = genre;
+	public void setCrawGenre(String crawGenre) {
+		this.crawGenre = crawGenre;
 	}
 
-	public String getSummary() {
-		return summary;
+	public String getCrawSummary() {
+		return crawSummary;
 	}
 
-	public void setSummary(String summary) {
-		this.summary = summary;
+	public void setCrawSummary(String crawSummary) {
+		this.crawSummary = crawSummary;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getCrawUrl() {
+		return crawUrl;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setCrawUrl(String crawUrl) {
+		this.crawUrl = crawUrl;
 	}
 
 	@Override
 	public String toString() {
-		return "title=" + title + " author=" + author + " week=" + week + " genre=" + genre + " summary=" + summary
-				+ " url=" + url;
+		return "crawTitle=" + crawTitle + " crawAuthor=" + crawAuthor + " crawWeek=" + crawWeek + " crawGenre="
+				+ crawGenre + " crawSummary=" + crawSummary + " crawUrl=" + crawUrl;
 	}
 }

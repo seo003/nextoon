@@ -49,12 +49,12 @@ public class BbsDAO {
 	public int write(String userId, String bbsTitle, String bbsContent) {
 		String sql = "INSERT INTO bbs (userId, bbsTitle, bbsDate, bbsContent) VALUES(?, ?, ?, ?)";
 		try {
-//			System.out.println("userId" + userId);
-//			System.out.println("bbsTitle" + bbsTitle);
-//			System.out.println("date" + getDate());
-//			System.out.println("bbsContent" + bbsContent);
+//			System.out.println("userId: " + userId);
+//			System.out.println("bbsTitle: " + bbsTitle);
+//			System.out.println("date: " + getDate());
+//			System.out.println("bbsContent: " + bbsContent);
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userId);
+			pstmt.setString(1, userId);	
 			pstmt.setString(2, bbsTitle);
 			pstmt.setString(3, getDate());
 			pstmt.setString(4, bbsContent);

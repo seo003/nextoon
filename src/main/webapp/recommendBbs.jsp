@@ -13,7 +13,12 @@
 </head>
 <!-- Main -->
 <div id="main">
-
+	<%
+	int pageNumber = 1;
+	if (request.getParameter("pageNumber") != null) {
+		pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+	}
+	%>
 	<!-- Post -->
 	<article class="post">
 		<header>
