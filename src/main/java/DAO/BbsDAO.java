@@ -1,12 +1,13 @@
 package DAO;
 
-import java.sql.Connection;
+import java.sql.Connection;	
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import DTO.BbsDTO;
 import util.DatabaseUtil;
+
 
 public class BbsDAO {
 	Connection conn = DatabaseUtil.getConnection();
@@ -45,25 +46,21 @@ public class BbsDAO {
 		return -1; // 데이터베이스 오류
 	}
 
-	// 글쓰기
+	//글쓰기
 	public int write(String userId, String bbsTitle, String bbsContent) {
-		String sql = "INSERT INTO bbs (userId, bbsTitle, bbsDate, bbsContent) VALUES(?, ?, ?, ?)";
+		String sql="INSERT INTO bbs VALUES(?, ?, ?, ?, ?, 1, 0)";
 		try {
-//			System.out.println("userId: " + userId);
-//			System.out.println("bbsTitle: " + bbsTitle);
-//			System.out.println("date: " + getDate());
-//			System.out.println("bbsContent: " + bbsContent);
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, userId);	
-			pstmt.setString(2, bbsTitle);
-			pstmt.setString(3, getDate());
-			pstmt.setString(4, bbsContent);
-			//여기서 왜 catch됨 몰?루
+			PreparedStatement pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, getNext());
+			pstmt.setString(2,  userId);
+			pstmt.setString(3, bbsTitle);
+			pstmt.setString(4, getDate());
+			pstmt.setString(5, bbsContent);
 			return pstmt.executeUpdate();
-		} catch (Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // 데이터베이스 오류
+		return -1; //데이터베이스 오류
 	}
 
 	// 게시글 리스트 메소드
