@@ -21,55 +21,55 @@
     <article class="post">
         <header>
             <form action="action/recommendAction.jsp">
-                <div class="title">
+                <div class="title firstTitle" style="padding-bottom:0px; padding-top:48px;">
                     <h2>
                         원하는 장르를 골라주세요!
                     </h2>
                     <p class="checkboxSite-group">
-                        <input type="checkbox" id="romance" name="genre">
+                        <input type="checkbox" id="romance" name="genre" value="로맨스">
                         <label for="romance">로맨스</label>
-                        <input type="checkbox" id="drama" name="genre">
+                        <input type="checkbox" id="drama" name="genre" value="드라마">
                         <label for="drama">드라마</label>
-                        <input type="checkbox" id="fantasy" name="genre">
+                        <input type="checkbox" id="fantasy" name="genre" value="판타지">
                         <label for="fantasy">판타지</label>
-                        <input type="checkbox" id="academy" name="genre">
+                        <input type="checkbox" id="academy" name="genre" value="학원물">
                         <label for="academy">학원물</label>
-                        <input type="checkbox" id="sport" name="genre">
+                        <input type="checkbox" id="sport" name="genre" value="스포츠">
                         <label for="sport">스포츠</label>
-                        <input type="checkbox" id="history" name="genre">
+                        <input type="checkbox" id="history" name="genre" value="무협/사극">
                         <label for="history">무협/사극</label>
-                        <input type="checkbox" id="munchkin" name="genre">
+                        <input type="checkbox" id="munchkin" name="genre" value="먼치킨">
                         <label for="munchkin">먼치킨</label>
-                        <input type="checkbox" id="life" name="genre">
+                        <input type="checkbox" id="life" name="genre" value="일상">
                         <label for="life">일상</label>
-                        <input type="checkbox" id="healing" name="genre">
+                        <input type="checkbox" id="healing" name="genre" value="힐링">
                         <label for="healing">힐링</label>
-                        <input type="checkbox" id="thriller" name="genre">
+                        <input type="checkbox" id="thriller" name="genre" value="스릴러">
                         <label for="thriller">스릴러</label>
-                        <input type="checkbox" id="action" name="genre">
+                        <input type="checkbox" id="action" name="genre" value="액션">
                         <label for="action">액션</label>
-                        <input type="checkbox" id="comedy" name="genre">
+                        <input type="checkbox" id="comedy" name="genre" value="코미디">
                         <label for="comedy">코미디</label>
-                        <input type="checkbox" id="crime" name="genre">
+                        <input type="checkbox" id="crime" name="genre" value="범죄">
                         <label for="crime">범죄</label>
-                        <input type="checkbox" id="joke" name="genre">
+                        <input type="checkbox" id="joke" name="genre" value="개그">
                         <label for="joke">개그</label>
                     </p>
-                    <input type="submit" class="recommendBtn button large" value="추천">
                 </div>
 
-                <div class="meta">
+                <div class="title secondTitle" style="padding-top:0px; padding-bottom:5px;">
                     <h2>
                         원하는 사이트를 골라주세요!
                     </h2>
-                    <p>
-                        <input type="checkbox" id="naver" name="site"checked>
+                    <p class="secondP" style="margin-bottom:1px;">
+                        <input type="checkbox" id="naver" name="site" checked>
                         <label for="naver">네이버</label>
                         <input type="checkbox" id="kakaoPage" name="site">
                         <label for="kakaoPage">카카오페이지</label>
                         <input type="checkbox" id="kakao" name="site">
                         <label for="kakao">카카오</label>
                     </p>
+                    <input type="submit" class="recommendBtn button large" value="추천">
                 </div>
             </form>
         </header>
@@ -90,8 +90,16 @@
 
         <a href="single.jsp" class="image featured"><img
                 src="images/pic01.jpg" alt=""/></a>
+        <% if (randomCraw.getCrawTitle().contains("휴재")) {
+            String newTitle = randomCraw.getCrawTitle().replace("휴재", "(휴재 중)");
+        %>
+        <h2><%=newTitle%>
+        </h2>
+        <%
+        } else {%>
         <h2><%=randomCraw.getCrawTitle()%>
         </h2>
+        <%}%>
         <p id="summary"><%=randomCraw.getCrawSummary()%>
         </p>
         <p id="genre"><%=randomCraw.getCrawGenre()%>
@@ -126,11 +134,29 @@
             <article class="mini-post">
                 <header>
                     <h3>
-                        <a href="single.html">웹툰사이트 이름</a>
+                        <a href="https://comic.naver.com/index">네이버웹툰 바로가기</a>
                     </h3>
                 </header>
-                <a href="single.html" class="image"><img src="images/pic07.jpg"
-                                                         alt=""/></a>
+                <a href="https://comic.naver.com/index" class="image">
+                    <img src="images/naverWebtoon.png" alt=""/></a>
+            </article>
+            <article class="mini-post">
+                <header>
+                    <h3>
+                        <a href="https://webtoon.kakao.com/">카카오웹툰 바로가기</a>
+                    </h3>
+                </header>
+                <a href="https://webtoon.kakao.com/" class="image">
+                    <img src="images/kakaoWebtoon.png" alt=""/></a>
+            </article>
+            <article class="mini-post">
+                <header>
+                    <h3>
+                        <a href="https://page.kakao.com/">카카오페이지 바로가기</a>
+                    </h3>
+                </header>
+                <a href="https://page.kakao.com/" class="image">
+                    <img src="images/kakaoPage.png" alt=""/></a>
             </article>
 
         </div>

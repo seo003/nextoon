@@ -2794,17 +2794,19 @@ ul.posts article header> :last-child {
 }
 
 .mini-post header {
-	padding: 1.25em 4.25em 0.1em 1.25em;
-	min-height: 4em;
+	padding: 10px 68px 10px 50px;
+	min-height: 1em;
 	position: relative;
 	-moz-flex-grow: 1;
 	-webkit-flex-grow: 1;
 	-ms-flex-grow: 1;
 	flex-grow: 1;
+	text-align:center;
 }
 
 .mini-post header h3 {
 	font-size: 0.7em;
+	margin-bottom:0px;
 }
 
 .mini-post header .published {
@@ -2933,6 +2935,7 @@ ul.posts article header> :last-child {
 	text-transform: uppercase;
 	white-space: nowrap;
 }
+
 
 .post>a.image.featured {
 	overflow: hidden;
@@ -3755,8 +3758,5 @@ body.is-menu-visible #menu {
 	#menu>* {
 		padding: 1.5em;
 	}
-
-}
-.checkboxSite-group {
 
 }
