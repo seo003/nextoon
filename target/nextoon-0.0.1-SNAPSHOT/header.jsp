@@ -33,9 +33,9 @@
 					<%
 					}
 					%>
-					<li><a href="#">자유게시판</a></li>
+					<li><a href="freeBbs.jsp">자유게시판</a></li>
 					<li><a href="recommendBbs.jsp">추천게시판</a></li>
-					<li><a href="#">덕질게시판</a></li>
+					<li><a href="fanBbs.jsp">덕질게시판</a></li>
 				</ul>
 			</nav>
 			<nav class="main">
@@ -62,15 +62,15 @@
 			<!-- Links -->
 			<section>
 				<ul class="links">
-					<li><a href="#">
+					<li><a href="freeBbs.jsp">
 							<h3>자유게시판</h3>
-							<p>웹툰에 대한 모든 하고싶은말을 적어주세요!</p>
+							<p>웹툰에 대해 하고싶은말을 뭐든지 적어주세요!</p>
 					</a></li>
 					<li><a href="recommendBbs.jsp">
 							<h3>추천게시판</h3>
 							<p>이 웹툰 괜찮은데? 추천해주세요!</p>
 					</a></li>
-					<li><a href="#">
+					<li><a href="fanBbs.jsp">
 							<h3>덕질게시판</h3>
 							<p>내 애가 짱이다! 마음껏 덕질해주세요!</p>
 					</a></li>

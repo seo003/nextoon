@@ -7,6 +7,7 @@ request.setCharacterEncoding("UTF-8");
 String bbsTitle=null;
 String bbsContent=null;
 String userId=null;
+	String bbsType=null;
 
 
 if(request.getParameter("bbsTitle")!=null) {
@@ -15,6 +16,9 @@ if(request.getParameter("bbsTitle")!=null) {
 
 if(request.getParameter("bbsContent")!=null) {
 	bbsContent=(String)request.getParameter("bbsContent");
+}
+if(request.getParameter("bbsType")!=null) {
+	bbsType=(String)request.getParameter("bbsType");
 }
 
 if(session.getAttribute("loginId")!=null) {
@@ -38,7 +42,7 @@ if (userId==null) {
 		script.close();
 	}else{
 		BbsDAO bbsDAO = new BbsDAO();
-		int result = bbsDAO.write(userId, bbsTitle, bbsContent);
+		int result = bbsDAO.write(userId, bbsType, bbsTitle, bbsContent);
 		
 		if(result == -1) {
 			PrintWriter script = response.getWriter();
@@ -51,7 +55,13 @@ if (userId==null) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('글쓰기 성공')");
-			script.println("location.href='../recommendBbs.jsp'");
+			if(bbsType.equals("recommend")) {
+				script.println("location.href='../recommendBbs.jsp'");
+			} else if(bbsType.equals("free")) {
+				script.println("location.href='../freeBbs.jsp'");
+			} else if(bbsType.equals("fan")) {
+				script.println("location.href='../fanBbs.jsp'");
+			}
 			script.println("</script>");
 			script.close();
 		}

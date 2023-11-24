@@ -34,14 +34,13 @@
                     <a href="recommendBbs.jsp">추천게시판</a>
                 </h2>
                 <p>이 웹툰 괜찮은데? 추천해주세요!</p>
-                <a href="bbsWrite.jsp" class="button large next" onclick="return isLogin('<%=loginId%>')">글쓰기</a>
+                <a href="bbsWrite.jsp?bbsType=recommend" class="button large next" onclick="return isLogin('<%=loginId%>')">글쓰기</a>
             </div>
         </header>
         <div class="table-wrapper">
             <table>
                 <thead>
                 <tr>
-                    <th>번호</th>
                     <th>제목</th>
                     <th>작성자</th>
                     <th>날짜</th>
@@ -56,15 +55,19 @@
                     }
                     System.out.println("loginId: " + loginId);
                     BbsDAO bbsDAO = new BbsDAO();
-                    ArrayList<BbsDTO> list = bbsDAO.getList(pageNumber);
+                    ArrayList<BbsDTO> list = bbsDAO.getRecList(pageNumber);
+                    if (list.isEmpty()) {
+                %>
+                    <tr>
+                        <td colspan="4">게시물이 존재하지 않습니다.</td>
+                    </tr>
+                <%
+                    }
                     for (int i = 0; i < list.size(); i++) {
                 %>
                 <tr>
-                    <td class="tdNo"><%=list.get(i).getBbsId()%>
-                    </td>
-                    <td class="tdUserId"><a href="bbsView.jsp?bbsId=<%=list.get(i).getBbsId()%>"><%=list.get(i).getUserId()%></a></td>
-                    <td class="tdTitle"><%=list.get(i).getBbsTitle()%></td>
-
+                    <td class="tdTitle"><a href="bbsView.jsp?bbsId=<%=list.get(i).getBbsId()%>"><%=list.get(i).getBbsTitle()%></a></td>
+                    <td class="tdUserId"><%=list.get(i).getUserId()%></td>
                     <td class="tdDate"><%= list.get(i).getBbsDate().substring(0,11) + list.get(i).getBbsDate().substring(11,13) + "시" + list.get(i).getBbsDate().substring(14,16) + "분"%></td>
                     <td class ="tdLike"><%=list.get(i).getLikeCount()%>
                     </td>

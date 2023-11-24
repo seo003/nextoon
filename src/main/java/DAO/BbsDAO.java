@@ -1,6 +1,6 @@
 package DAO;
 
-import java.sql.Connection;	
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -47,26 +47,27 @@ public class BbsDAO {
 	}
 
 	//글쓰기
-	public int write(String userId, String bbsTitle, String bbsContent) {
-		String sql="INSERT INTO bbs VALUES(?, ?, ?, ?, ?, 1, 0)";
+	public int write(String userId, String bbsType, String bbsTitle, String bbsContent) {
+		String sql="INSERT INTO bbs VALUES(?, ?, ?, ?, ?, ?, 1, 0)";
 		try {
 			PreparedStatement pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, getNext());
-			pstmt.setString(2,  userId);
-			pstmt.setString(3, bbsTitle);
-			pstmt.setString(4, getDate());
-			pstmt.setString(5, bbsContent);
+			pstmt.setString(2, userId);
+			pstmt.setString(3, bbsType);
+			pstmt.setString(4, bbsTitle);
+			pstmt.setString(5, getDate());
+			pstmt.setString(6, bbsContent);
 			return pstmt.executeUpdate();
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return -1; //데이터베이스 오류
 	}
 
 	// 게시글 리스트 메소드
-	public ArrayList<BbsDTO> getList(int pageNumber) {
-		String sql = "SELECT * FROM bbs WHERE bbsId < ? and bbsAvailable = 1 ORDER BY bbsId DESC LIMIT 10";
-
+	//추천게시판
+	public ArrayList<BbsDTO> getRecList(int pageNumber) {
+		String sql = "SELECT * FROM bbs WHERE bbsId < ? and bbsAvailable = 1 and bbsType='recommend' ORDER BY bbsId DESC LIMIT 10";
 		ArrayList<BbsDTO> list = new ArrayList<BbsDTO>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -75,12 +76,63 @@ public class BbsDAO {
 			while (rs.next()) {
 				BbsDTO bbs = new BbsDTO();
 				bbs.setBbsId(rs.getInt(1));
-				bbs.setBbsTitle(rs.getString(2));
-				bbs.setUserId(rs.getString(3));
-				bbs.setBbsDate(rs.getString(4));
-				bbs.setBbsContent(rs.getString(5));
-				bbs.setBbsAvailable(rs.getInt(6));
-				bbs.setLikeCount(rs.getInt(7));
+				bbs.setUserId(rs.getString(2));
+				bbs.setBbsType(rs.getString(3));
+				bbs.setBbsTitle(rs.getString(4));
+				bbs.setBbsDate(rs.getString(5));
+				bbs.setBbsContent(rs.getString(6));
+				bbs.setBbsAvailable(rs.getInt(7));
+				bbs.setLikeCount(rs.getInt(8));
+				list.add(bbs);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	//자유게시판
+	public ArrayList<BbsDTO> getFreeList(int pageNumber) {
+		String sql = "SELECT * FROM bbs WHERE bbsId < ? and bbsAvailable = 1 and bbsType='free' ORDER BY bbsId DESC LIMIT 10";
+		ArrayList<BbsDTO> list = new ArrayList<BbsDTO>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BbsDTO bbs = new BbsDTO();
+				bbs.setBbsId(rs.getInt(1));
+				bbs.setUserId(rs.getString(2));
+				bbs.setBbsType(rs.getString(3));
+				bbs.setBbsTitle(rs.getString(4));
+				bbs.setBbsDate(rs.getString(5));
+				bbs.setBbsContent(rs.getString(6));
+				bbs.setBbsAvailable(rs.getInt(7));
+				bbs.setLikeCount(rs.getInt(8));
+				list.add(bbs);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	//덕질게시판
+	public ArrayList<BbsDTO> getFanList(int pageNumber) {
+		String sql = "SELECT * FROM bbs WHERE bbsId < ? and bbsAvailable = 1 and bbsType='fan' ORDER BY bbsId DESC LIMIT 10";
+		ArrayList<BbsDTO> list = new ArrayList<BbsDTO>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				BbsDTO bbs = new BbsDTO();
+				bbs.setBbsId(rs.getInt(1));
+				bbs.setUserId(rs.getString(2));
+				bbs.setBbsType(rs.getString(3));
+				bbs.setBbsTitle(rs.getString(4));
+				bbs.setBbsDate(rs.getString(5));
+				bbs.setBbsContent(rs.getString(6));
+				bbs.setBbsAvailable(rs.getInt(7));
+				bbs.setLikeCount(rs.getInt(8));
 				list.add(bbs);
 			}
 		} catch (Exception e) {

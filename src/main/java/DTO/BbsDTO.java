@@ -3,6 +3,7 @@ package DTO;
 public class BbsDTO {
 	private int bbsId;
 	private String userId;
+	private String bbsType;
 	private String bbsTitle;
 	private String bbsDate;
 	private String bbsContent;
@@ -21,6 +22,8 @@ public class BbsDTO {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+	public String getBbsType() { return bbsType; }
+	public void setBbsType(String bbsType) { this.bbsType = bbsType; }
 	public String getBbsTitle() {
 		return bbsTitle;
 	}

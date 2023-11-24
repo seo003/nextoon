@@ -17,7 +17,9 @@
 	<!-- Post -->
 	<article class="post">
 		<form method="post" action="action/writeAction.jsp">
+			<% String bbsType = request.getParameter("bbsType"); %>
 			<header>
+				<input type="hidden" name="bbsType" value="<%= bbsType %>">
 				<div class="title">
 					<h2>
 						제목<input id="bbsTitle" type="text" name="bbsTitle"
