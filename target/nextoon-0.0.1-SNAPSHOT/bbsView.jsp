@@ -13,9 +13,10 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="/css/main.css" />
+
 </head>
 <!-- Main -->
-<div id="main">
+<div id="main" >
 	<%
 		int bbsId = 0;
 		if(request.getParameter("bbsId") != null) {
@@ -56,7 +57,7 @@
 
 		<footer>
 			<ul class="stats">
-				<li><a href="#" class="icon solid fa-heart"><%=bbsDTO.getLikeCount()%></a></li>
+				<li><a href="action/likeAction.jsp?bbsId=<%=bbsDTO.getBbsId()%>" class="icon solid fa-heart"><%=bbsDTO.getLikeCount()%></a></li>
 				<li><a href="#" class="icon solid fa-comment">128</a></li>
 			</ul>
 		</footer>
@@ -68,7 +69,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>

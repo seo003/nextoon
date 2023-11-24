@@ -167,11 +167,13 @@ public class BbsDAO {
 			if (rs.next()) {
 				BbsDTO bbs = new BbsDTO();
 				bbs.setBbsId(rs.getInt(1));
-				bbs.setBbsTitle(rs.getString(2));
-				bbs.setUserId(rs.getString(3));
-				bbs.setBbsDate(rs.getString(4));
-				bbs.setBbsContent(rs.getString(5));
-				bbs.setBbsAvailable(rs.getInt(6));
+				bbs.setUserId(rs.getString(2));
+				bbs.setBbsType(rs.getString(3));
+				bbs.setBbsTitle(rs.getString(4));
+				bbs.setBbsDate(rs.getString(5));
+				bbs.setBbsContent(rs.getString(6));
+				bbs.setBbsAvailable(rs.getInt(7));
+				bbs.setLikeCount(rs.getInt(8));
 				return bbs;
 			}
 		} catch (Exception e) {
