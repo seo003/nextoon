@@ -1,5 +1,9 @@
 package crawling;
 
+import java.awt.image.BufferedImage;
+import java.io.FileOutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.sql.Connection;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -17,6 +21,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import DAO.CrawDAO;
 import DTO.CrawDTO;
 import util.DatabaseUtil;
+
+import javax.imageio.ImageIO;
 
 public class Crawling {
 	public static void main(String[] args) {
@@ -105,6 +111,25 @@ public class Crawling {
                         genreValues += genreValue + " ";
                     }
                     System.out.println("genreValues: " + genreValues);
+                    //이미지
+                    WebElement imageElement = infoElement.findElement(By.className("Poster__image--d9XTI"));
+                    String imageUrl = imageElement.getAttribute("src");
+                    System.out.println("imageUrl: " + imageUrl);
+
+                    String fileName="";
+                    try {
+                        URL url = new URL(imageUrl);
+                        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+
+                        conn.setRequestProperty("Referer", imageUrl);
+                        BufferedImage img = ImageIO.read(conn.getInputStream());
+                        fileName = titleValue + ".png";
+                        FileOutputStream out = new FileOutputStream("C:\\2023\\JSPproject\\nextoon\\src\\main\\webapp\\images\\" + fileName);
+                        ImageIO.write(img, "png", out);
+                        System.out.println("fileName: " + fileName);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     System.out.println("------------------");
 
                     //디비 저장
@@ -115,6 +140,7 @@ public class Crawling {
                     crawDTO.setCrawGenre(genreValues);
                     crawDTO.setCrawSummary(summaryValue);
                     crawDTO.setCrawUrl(link);
+                    crawDTO.setCrawImage(fileName);
                     System.out.println(crawDTO.toString());
 
                     crawDAO.saveInfo(crawDTO);

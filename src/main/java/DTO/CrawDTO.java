@@ -7,6 +7,7 @@ public class CrawDTO {
 	private String crawGenre;
 	private String crawSummary;
 	private String crawUrl;
+	private String crawImage;
 
 	public String getCrawTitle() {
 		return crawTitle;
@@ -56,9 +57,17 @@ public class CrawDTO {
 		this.crawUrl = crawUrl;
 	}
 
+	public String getCrawImage() {
+		return crawImage;
+	}
+
+	public void setCrawImage(String crawImage) {
+		this.crawImage = crawImage;
+	}
+
 	@Override
 	public String toString() {
 		return "crawTitle=" + crawTitle + " crawAuthor=" + crawAuthor + " crawWeek=" + crawWeek + " crawGenre="
-				+ crawGenre + " crawSummary=" + crawSummary + " crawUrl=" + crawUrl;
+				+ crawGenre + " crawSummary=" + crawSummary + " crawUrl=" + crawUrl + " crawImage: " + crawImage;
 	}
 }

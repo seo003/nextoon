@@ -42,15 +42,15 @@
 					<%
 						if (loginId!=null && loginId.equals(bbsDTO.getUserId())) {
 						%>
-					<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="#"><input type="button" class="button large next delete" value="삭제" ></a>
-					<a href="#"><input type="button" class="button large next edit" value="수정" ></a>
+					<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="action/deleteAction.jsp?bbsId=<%=bbsDTO.getBbsId()%>&bbsType=<%=bbsDTO.getBbsType()%>"><input type="button" class="button large next delete" value="삭제" ></a>
+					<a href="bbsUpdate.jsp?bbsId=<%=bbsDTO.getBbsId()%>"><input type="button" class="button large next edit" value="수정" ></a>
 				<%
 					}
 				%>
 			</div>
 			<div class="meta">
 				<time class="published" datetime="2015-11-01"><%=bbsDTO.getBbsDate().substring(0,11) + bbsDTO.getBbsDate().substring(11,13) + "시" + bbsDTO.getBbsDate().substring(14,16) + "분" %></time>
-				<a href="#" class="author"><span class="name">작성자</span></a>
+				<a href="#" class="author"><span class="name"><%=bbsDTO.getUserId()%></span></a>
 			</div>
 		</header>
 		<p><%=bbsDTO.getBbsContent()%></p>
@@ -58,7 +58,7 @@
 		<footer>
 			<ul class="stats">
 				<li><a href="action/likeAction.jsp?bbsId=<%=bbsDTO.getBbsId()%>" class="icon solid fa-heart"><%=bbsDTO.getLikeCount()%></a></li>
-				<li><a href="#" class="icon solid fa-comment">128</a></li>
+				<li><a href="#" class="icon solid fa-comment">0</a></li>
 			</ul>
 		</footer>
 	</article>

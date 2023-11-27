@@ -17,18 +17,14 @@
         recommendList = crawDAO.allInfo();
     } else {
         for (String genre : selectedGenres) {
-            System.out.println("genre: "+genre);
+//            System.out.println("genre: "+genre);
             ArrayList<CrawDTO> oneRecommendList = crawDAO.recommendInfo(genre);
             recommendList.addAll(oneRecommendList);
         }
     }
 
     if (!recommendList.isEmpty()) {
-        request.setAttribute("recommendList", recommendList);
-        PrintWriter script = response.getWriter();
-        script.println("<script>");
-        script.println("location.href='../index.jsp'");
-        script.println("</script>");
-        script.close();
+        request.getSession().setAttribute("recommendList", recommendList);
+        response.sendRedirect("../index.jsp");
     }
 %>

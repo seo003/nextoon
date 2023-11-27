@@ -14,7 +14,7 @@ public class CrawDAO {
     private ResultSet rs;
 
     public void saveInfo(CrawDTO crawDTO) {
-        String sql = "INSERT INTO craw VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO craw VALUES(?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, crawDTO.getCrawTitle());
@@ -23,12 +23,14 @@ public class CrawDAO {
             pstmt.setString(4, crawDTO.getCrawGenre());
             pstmt.setString(5, crawDTO.getCrawSummary());
             pstmt.setString(6, crawDTO.getCrawUrl());
-                pstmt.executeUpdate();
+            pstmt.setString(7, crawDTO.getCrawImage());
+            pstmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("데이터베이스 오류");
         }
     }
+
     public void resetInfo() {
         String sql = "DELETE FROM craw";
         try {
@@ -39,6 +41,7 @@ public class CrawDAO {
             System.out.println("데이터베이스 오류");
         }
     }
+
     public ArrayList<CrawDTO> recommendInfo(String genre) {
         String sql = "SELECT * FROM craw WHERE crawGenre LIKE ?";
         ArrayList<CrawDTO> list = new ArrayList<>();
@@ -54,13 +57,17 @@ public class CrawDAO {
                 crawDTO.setCrawGenre(rs.getString(4));
                 crawDTO.setCrawSummary(rs.getString(5));
                 crawDTO.setCrawUrl(rs.getString(6));
+                crawDTO.setCrawImage(rs.getString(7));
                 list.add(crawDTO);
+//                System.out.println("crawDTO: " + crawDTO.toString());
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return list;
     }
+
     public ArrayList<CrawDTO> allInfo() {
         String sql = "SELECT * FROM craw";
         ArrayList<CrawDTO> list = new ArrayList<>();
@@ -75,6 +82,7 @@ public class CrawDAO {
                 crawDTO.setCrawGenre(rs.getString(4));
                 crawDTO.setCrawSummary(rs.getString(5));
                 crawDTO.setCrawUrl(rs.getString(6));
+                crawDTO.setCrawImage(rs.getString(7));
                 list.add(crawDTO);
             }
         } catch (Exception e) {

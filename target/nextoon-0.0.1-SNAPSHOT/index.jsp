@@ -12,7 +12,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
 </head>
 <!-- Main -->
 <div id="main">
@@ -20,7 +20,7 @@
     <!-- Post -->
     <article class="post">
         <header>
-            <form action="action/recommendAction.jsp">
+            <form id="recommendForm" action="action/recommendAction.jsp">
                 <div class="title firstTitle" style="padding-bottom:0px; padding-top:48px;">
                     <h2>
                         원하는 장르를 골라주세요!
@@ -72,9 +72,12 @@
                     <input type="submit" class="recommendBtn button large" value="추천">
                 </div>
             </form>
+
+
         </header>
         <%
-            ArrayList<CrawDTO> recommendList = (ArrayList<CrawDTO>) request.getAttribute("recommendList");
+            ArrayList<CrawDTO> recommendList = (ArrayList<CrawDTO>)request.getSession().getAttribute("recommendList");
+
             Random random = new Random();
             int randomIndex;
             if (recommendList != null) {
@@ -88,8 +91,8 @@
             CrawDTO randomCraw = recommendList.get(randomIndex);
         %>
 
-        <a href="single.jsp" class="image featured"><img
-                src="images/pic01.jpg" alt=""/></a>
+        <a href="<%=randomCraw.getCrawUrl()%>" class="image featured">
+            <img src="/images/<%=randomCraw.getCrawImage()%>" alt=""/></a>
         <% if (randomCraw.getCrawTitle().contains("휴재")) {
             String newTitle = randomCraw.getCrawTitle().replace("휴재", "(휴재 중)");
         %>
@@ -117,9 +120,9 @@
 
     <!-- Intro -->
     <section id="intro">
-        <a href="#" class="logo"><img src="images/logo.jpg" alt=""/></a>
+        <a href="index.jsp" class="logo"><img src="/images/logo.jpg" alt=""/></a>
         <header>
-            <h2>NEXTOON</h2>
+            <a href="index.jsp"><h2>NEXTOON</h2></a>
             <p>
                 웹툰 추천 게시판
             </p>
@@ -138,7 +141,7 @@
                     </h3>
                 </header>
                 <a href="https://comic.naver.com/index" class="image">
-                    <img src="images/naverWebtoon.png" alt=""/></a>
+                    <img src="/images/naverWebtoon.png" alt=""/></a>
             </article>
             <article class="mini-post">
                 <header>
@@ -147,7 +150,7 @@
                     </h3>
                 </header>
                 <a href="https://webtoon.kakao.com/" class="image">
-                    <img src="images/kakaoWebtoon.png" alt=""/></a>
+                    <img src="/images/kakaoWebtoon.png" alt=""/></a>
             </article>
             <article class="mini-post">
                 <header>
@@ -156,32 +159,11 @@
                     </h3>
                 </header>
                 <a href="https://page.kakao.com/" class="image">
-                    <img src="images/kakaoPage.png" alt=""/></a>
+                    <img src="/images/kakaoPage.png" alt=""/></a>
             </article>
 
         </div>
     </section>
-
-    <!-- Posts List -->
-    <!--
-    <section>
-        <ul class="posts">
-            <li>
-                <article>
-                    <header>
-                        <h3>
-                            <a href="single.html">Congue ullam corper lorem ipsum dolor</a>
-                        </h3>
-                        <time class="published" datetime="2015-10-06">October 7,
-                            2015</time>
-                    </header>
-                    <a href="single.html" class="image"><img src="images/pic12.jpg"
-                        alt="" /></a>
-                </article>
-            </li>
-        </ul>
-    </section>
-    -->
 
     <!-- About -->
     <section class="blurb">
