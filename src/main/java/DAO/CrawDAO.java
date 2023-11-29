@@ -90,4 +90,30 @@ public class CrawDAO {
         }
         return list;
     }
+
+    public ArrayList<CrawDTO> getSearchList(String searchValue, String column) {
+        String sql = "SELECT * FROM craw WHERE " + column + " LIKE ?";
+        ArrayList<CrawDTO> list = new ArrayList<>();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, "%" + searchValue + "%");
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                CrawDTO crawDTO = new CrawDTO();
+                crawDTO.setCrawTitle(rs.getString(1));
+                crawDTO.setCrawAuthor(rs.getString(2));
+                crawDTO.setCrawWeek(rs.getString(3));
+                crawDTO.setCrawGenre(rs.getString(4));
+                crawDTO.setCrawSummary(rs.getString(5));
+                crawDTO.setCrawUrl(rs.getString(6));
+                crawDTO.setCrawImage(rs.getString(7));
+                list.add(crawDTO);
+//                System.out.println("crawDTO: " + crawDTO.toString());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
 }
