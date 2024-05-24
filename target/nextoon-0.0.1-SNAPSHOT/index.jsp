@@ -58,17 +58,7 @@
                 </div>
 
                 <div class="title secondTitle" style="padding-top:0px; padding-bottom:5px;">
-                    <h2>
-                        원하는 사이트를 골라주세요!
-                    </h2>
-                    <p class="secondP" style="margin-bottom:1px;">
-                        <input type="checkbox" id="naver" name="site" checked>
-                        <label for="naver">네이버</label>
-                        <input type="checkbox" id="kakaoPage" name="site">
-                        <label for="kakaoPage">카카오페이지</label>
-                        <input type="checkbox" id="kakao" name="site">
-                        <label for="kakao">카카오</label>
-                    </p>
+
                     <input type="submit" class="recommendBtn button large" value="추천">
                 </div>
             </form>
@@ -93,16 +83,13 @@
 
         <a href="<%=randomCraw.getCrawUrl()%>" class="image featured">
             <img src="/images/<%=randomCraw.getCrawImage()%>" alt=""/></a>
-        <% if (randomCraw.getCrawTitle().contains("휴재")) {
-            String newTitle = randomCraw.getCrawTitle().replace("휴재", "(휴재 중)");
+        <% String title = randomCraw.getCrawTitle();
+            if (title.contains("휴재")) {
+                title = title.replace("휴재", "(휴재 중)");
+            }
         %>
-        <h2><%=newTitle%>
+        <h2><%=title%> | <%=randomCraw.getCrawAuthor()%>
         </h2>
-        <%
-        } else {%>
-        <h2><%=randomCraw.getCrawTitle()%>
-        </h2>
-        <%}%>
         <p id="summary"><%=randomCraw.getCrawSummary()%>
         </p>
         <p id="genre"><%=randomCraw.getCrawGenre()%>

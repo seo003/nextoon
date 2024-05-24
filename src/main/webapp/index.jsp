@@ -58,17 +58,7 @@
                 </div>
 
                 <div class="title secondTitle" style="padding-top:0px; padding-bottom:5px;">
-                    <h2>
-                        원하는 사이트를 골라주세요!
-                    </h2>
-                    <p class="secondP" style="margin-bottom:1px;">
-                        <input type="checkbox" id="naver" name="site" checked>
-                        <label for="naver">네이버</label>
-                        <input type="checkbox" id="kakaoPage" name="site">
-                        <label for="kakaoPage">카카오페이지</label>
-                        <input type="checkbox" id="kakao" name="site">
-                        <label for="kakao">카카오</label>
-                    </p>
+
                     <input type="submit" class="recommendBtn button large" value="추천">
                 </div>
             </form>
@@ -90,28 +80,30 @@
 
             CrawDTO randomCraw = recommendList.get(randomIndex);
         %>
-
-        <a href="<%=randomCraw.getCrawUrl()%>" class="image featured">
-            <img src="/images/<%=randomCraw.getCrawImage()%>" alt=""/></a>
-        <% if (randomCraw.getCrawTitle().contains("휴재")) {
-            String newTitle = randomCraw.getCrawTitle().replace("휴재", "(휴재 중)");
-        %>
-        <h2><%=newTitle%>
-        </h2>
-        <%
-        } else {%>
-        <h2><%=randomCraw.getCrawTitle()%>
-        </h2>
-        <%}%>
-        <p id="summary"><%=randomCraw.getCrawSummary()%>
-        </p>
-        <p id="genre"><%=randomCraw.getCrawGenre()%>
-        </p>
-        <footer>
+		<div class="image_text-container">
+                <div class="image-container">
+                    <a href="<%=randomCraw.getCrawUrl()%>" class=" ">
+                        <img src="image/<%=randomCraw.getCrawImage()%>" alt=""/>
+                    </a>
+                </div>
+                <div class="text-container">
+                    <% 
+                        String title = randomCraw.getCrawTitle();
+                        if (title.contains("휴재")) {
+                            title = title.replace("휴재", "(휴재 중)");
+                        }
+                    %>
+                    <h2><%=title%> | <%=randomCraw.getCrawAuthor()%></h2>
+                    <p id="summary"><%=randomCraw.getCrawSummary()%></p>
+                    <p id="genre"><%=randomCraw.getCrawGenre()%></p>
+                     <footer>
             <ul class="actions">
                 <li><a href="<%=randomCraw.getCrawUrl()%>" class="button large">바로가기</a></li>
             </ul>
         </footer>
+                </div>
+            </div>
+       
     </article>
 </div>
 
@@ -120,7 +112,7 @@
 
     <!-- Intro -->
     <section id="intro">
-        <a href="index.jsp" class="logo"><img src="/images/logo.jpg" alt=""/></a>
+        <a href="index.jsp" class="logo"><img src="image/logo.jpg" alt=""/></a>
         <header>
             <a href="index.jsp"><h2>NEXTOON</h2></a>
             <p>
@@ -141,7 +133,7 @@
                     </h3>
                 </header>
                 <a href="https://comic.naver.com/index" class="image">
-                    <img src="/images/naverWebtoon.png" alt=""/></a>
+                    <img src="image/naverWebtoon.png" alt=""/></a>
             </article>
             <article class="mini-post">
                 <header>
@@ -150,7 +142,7 @@
                     </h3>
                 </header>
                 <a href="https://webtoon.kakao.com/" class="image">
-                    <img src="/images/kakaoWebtoon.png" alt=""/></a>
+                    <img src="image/kakaoWebtoon.png" alt=""/></a>
             </article>
             <article class="mini-post">
                 <header>
@@ -159,7 +151,7 @@
                     </h3>
                 </header>
                 <a href="https://page.kakao.com/" class="image">
-                    <img src="/images/kakaoPage.png" alt=""/></a>
+                    <img src="image/kakaoPage.png" alt=""/></a>
             </article>
 
         </div>

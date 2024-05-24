@@ -53,8 +53,8 @@
 
 		<!-- Search -->
 		<section>
-			<form class="search" method="get" action="#">
-				<input type="text" name="query" placeholder="Search" />
+			<form class="search" method="get" action="search.jsp">
+				<input type="text" name="searchText" placeholder="Search" />
 			</form>
 		</section>
 

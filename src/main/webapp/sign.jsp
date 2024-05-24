@@ -67,24 +67,5 @@
 			</div>
 		</div>
 	</div>
-
-
-	<style type="text/css">
-.site-link {
-	padding: 5px 15px;
-	position: fixed;
-	z-index: 99999;
-	background: #fff;
-	box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
-	right: 30px;
-	bottom: 30px;
-	border-radius: 10px;
-}
-
-.site-link img {
-	width: 30px;
-	height: 30px;
-}
-</style>
 </body>
 </html>
