@@ -25,8 +25,8 @@ Nextoon은 웹툰에 흥미 있는 사람들이 모여 소통하고 추천받을
 2023.10 ~ 2023.12 [2개월]
 
 ## 🖥️ 화면 구성 
-| : 메인 화면 | : 회원가입 및 로그인 | 
-| --- | --- |
+| 메인 화면 | 회원가입 및 로그인 | 
+| :--- | :--- |
 | <center><img src="https://github.com/seo003/nextoon/assets/115700682/5d2f012d-00c8-4651-99ec-ef2175409b33"  width="300" height="350"/></center> | <center><img src="https://github.com/seo003/nextoon/assets/115700682/1bd0f241-4cfc-4ab6-b4d0-9e0d8a55820a"  width="300" height="175"/><img src="https://github.com/seo003/nextoon/assets/115700682/2a7f1933-8bdc-4f4b-9023-395fe0c6bae2"  width="300" height="175"/></center> | 
 | <center> **커뮤니티** </center> | <center> **글 작성, 수정, 보기** </center> | 
 | <center> <img src="https://github.com/seo003/nextoon/assets/115700682/aa05e0b7-555a-4252-b915-6eeda5c874d4"  width="300" height="175"/><img src="https://github.com/seo003/nextoon/assets/115700682/4ae737f9-9516-4261-beb1-d4f897d04578"  width="300" height="175"/><img src="https://github.com/seo003/nextoon/assets/115700682/cb14c92f-513f-4c92-b5ff-19b2749c645a"  width="300" height="175"/> </center> | <center> <img src="https://github.com/seo003/nextoon/assets/115700682/ea3b8e62-daa1-4c24-8af9-95e449dc7ab9"  width="300" height="175"/><img src="https://github.com/seo003/nextoon/assets/115700682/3dcbe30c-3218-4411-bc9a-166de533ee21"  width="300" height="175"/><img src="https://github.com/seo003/nextoon/assets/115700682/291b4c7b-3a4e-420d-a100-6088f844b3be"  width="300" height="175"/> </center> | 
